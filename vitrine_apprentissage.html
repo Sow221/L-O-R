@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace d'Apprentissage Pratique</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {font-family: 'Segoe UI', Arial, sans-serif; margin:0; background:#f6f6fa; color:#24292f;}
+        nav {background: #174ca4; padding: 0;}
+        nav ul {display: flex; margin: 0; padding: 0; list-style: none;}
+        nav li {flex:1;}
+        nav a {display:block; color: #fff; text-decoration: none; padding: 18px; text-align:center; font-size:1.15em; transition:.3s;}
+        nav a:hover, nav a.active {background: #12509c;}
+        .container {max-width:960px; margin:40px auto; background:#fff; box-shadow:0 6px 32px #bcd6f9b0; border-radius:12px; padding:38px;}
+        .hidden {display:none;}
+        h1 {color:#174ca4;}
+        h2 {color:#2476ac;}
+        .cards {display:flex; flex-wrap:wrap; gap:22px;}
+        .card {flex:1 1 240px; background:#e9f3fb; padding:24px 20px; border-radius:8px; margin-bottom:20px; box-shadow:0 2px 14px #e6eef6;}
+        .card h3 {margin-top:0;}
+        .lab-link {display: block; margin-bottom: 12px; color: #1a4f8c; text-decoration: underline;}
+        @media(max-width:750px) {.container{padding:15px;} .cards{flex-direction:column;}}
+        .footer{text-align:center; margin:50px 0 20px 0; font-size:0.95em; color:#888;}
+    </style>
+    <script>
+        function showSection(id){
+            document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+            document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
+            document.querySelector('[data-target=\"'+id+'\"]').classList.add('active');
+        }
+        window.onload=function(){ showSection('accueil'); }
+    </script>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#" data-target="accueil" onclick="showSection('accueil');return false;" class="active">Accueil</a></li>
+        <li><a href="#" data-target="lab" onclick="showSection('lab');return false;">Lab</a></li>
+        <li><a href="#" data-target="forum" onclick="showSection('forum');return false;">Espace d'échange</a></li>
+        <li><a href="#" data-target="ressources" onclick="showSection('ressources');return false;">Ressources</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <section id="accueil" class="section">
+        <h1>Bienvenue sur l'Espace d'Apprentissage Pratique</h1>
+        <p>
+            Cet espace vous offre :
+            <ul>
+                <li>Des <b>cours pratiques</b> accessibles à tout moment dans le Lab</li>
+                <li>Un <b>espace d'échange</b> pour poser vos questions, discuter et progresser ensemble</li>
+                <li>Une sélection de <b>ressources utiles</b> pour aller plus loin</li>
+            </ul>
+        </p>
+        <div class="cards">
+            <div class="card">
+                <h3>🌱 Pratique immédiate</h3>
+                <p>Suivez les consignes puis exercez-vous directement grâce aux mini-projets et aux fiches du Lab !</p>
+            </div>
+            <div class="card">
+                <h3>🤝 Communauté </h3>
+                <p>Rejoignez l'espace d'échange : questions, entraide, retours sur vos travaux.</p>
+            </div>
+            <div class="card">
+                <h3>🔗 Documentation</h3>
+                <p>Accédez rapidement à la documentation et à des tutoriels recommandés.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="lab" class="section hidden">
+        <h2>👩‍💻 Lab des cours pratiques</h2>
+        <p>Retrouvez ici tous les cours et exercices à télécharger/consulter.</p>
+        <ul>
+            <!-- Remplace les liens par tes propres fichiers ou cours dans le repo -->
+            <li><a href="cours_git-GitHub.html" class="lab-link" target="_blank">Fiche pratique : S'initier à Git/GitHub</a></li>
+            <li><a href="#" class="lab-link">Cours : Introduction au HTML/CSS (à venir)</a></li>
+            <li><a href="#" class="lab-link">Exercice : Mon premier commit Git (à venir)</a></li>
+        </ul>
+        <p>
+            <em>Astuce : Tu peux ajouter tes propres fichiers dans le repo puis mettre ici les liens vers leurs chemins !</em>
+        </p>
+    </section>
+
+    <section id="forum" class="section hidden">
+        <h2>💬 Espace d'échange</h2>
+        <p>
+            Besoin d'aide, une idée à partager, envie de discuter d'une ressource ?
+            <br><br>
+            <b>Voici comment participer :</b>
+            <ul>
+                <li>Pose ta question <b>en créant une issue</b> sur le dépôt GitHub associé à ce site</li>
+                <li>Ou rejoins le <b>groupe Discord/Telegram</b> (lien à insérer ici)</li>
+                <li>Ou encore : contacte l'encadrant à <a href="mailto:contact@exemple.com">contact@exemple.com</a></li>
+            </ul>
+            <br>
+            <em>Tu peux remplacer ce texte par un vrai forum (type widget Disqus/framateam) ou un canal de chat !</em>
+        </p>
+    </section>
+
+    <section id="ressources" class="section hidden">
+        <h2>📚 Ressources utiles</h2>
+        <ul>
+            <li><a href="https://git-scm.com/doc" target="_blank">Documentation Officielle Git</a></li>
+            <li><a href="https://docs.github.com/fr" target="_blank">Documentation GitHub (français)</a></li>
+            <li><a href="https://mdn.github.io/beginner-html-site/" target="_blank">Mini-site HTML5 Débutant</a></li>
+            <li><a href="https://learngitbranching.js.org/?locale=fr_FR" target="_blank">Exercices interactifs sur les branches Git</a></li>
+            <!-- Ajoute ici tes ressources préférées -->
+        </ul>
+    </section>
+</div>
+<div class="footer">© 2024 – Espace d'Apprentissage Pratique</div>
+</body>
+</html>
