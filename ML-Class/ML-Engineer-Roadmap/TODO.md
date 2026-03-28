@@ -1,9 +1,9 @@
 # ML Engineer Roadmap Progress
 
 ## Setup (Pending)
-- [ ] Create conda env: `conda env create -f environment.yml`
+- [x] Create conda env: `cd ML-Engineer-Roadmap &amp;&amp; conda env create -f environment.yml` (or `pip install -r requirements.txt`)
 - [ ] Activate: `conda activate ml-roadmap`
-- [ ] Install Jupyter extensions if needed: `conda install jupyterlab`
+- [ ] `jupyter lab`
 
 ## Phase 1 - Foundations (Pending)
 - [ ] Complete lesson.ipynb
@@ -15,5 +15,5 @@
 ## Phase 4 - Advanced (Locked)
 ## Phase 5 - Deployment (Locked)
 
-*Mark checkboxes as you complete. Ping me when Phase 1 done for Phase 2.*
+*Coche les cases au fur et à mesure. Dis-moi \"Phase 1 terminée\" avec tes outputs/apprentissages pour Phase 2.*
 
